@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './../api.service';
- 
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,12 +13,29 @@ export class AppComponent implements OnInit {
   text: string;
   translation: string;
   displayElement = true;
-  
-  constructor(private apiService:ApiService) {}
- 
+  form: FormGroup;
+  submitted = false;
+
+  constructor(private formBuilder: FormBuilder, private apiService: ApiService) {}
+
   ngOnInit() {
+    this.form = this.formBuilder.group({
+      text: ['', Validators.required]
+    });
   }
 
+  get f() { return this.form.controls; }
+
+  onSubmit() {
+    this.submitted = true;
+
+    if (this.form.invalid) {
+      return;
+    }
+
+    this.continue();
+
+  }
 
   timer = null;
   inputDelay() {

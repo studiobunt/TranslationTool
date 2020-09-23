@@ -13,15 +13,24 @@
     <ng-template #finalTranslation>
       <p class="finalTranslation">Your final translation is "{{translation}}"</p>
     </ng-template>
-    <form>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div *ngIf="displayElement; else finalTranslation">
         <div class="bluebox">
-          <input (keyup)="inputDelay()" [(ngModel)]="text" name="text" type="text" />
+
+          <input (keyup)="inputDelay()" [(ngModel)]="text" name="text" type="text" formControlName="text" [ngClass]="{ 'is-invalid': submitted && f.text.errors }" />
+
+          <div *ngIf="submitted && f.text.errors" class="invalid-feedback">
+            <div style="text-align: center;" *ngIf="f.text.errors.required">Please enter text to translate</div>
+          </div>
+
         </div>
 
         <div class="translation">Translated text: {{translation}}</div>
 
-        <p class="pbtn"><button (click)="continue()" class="btn">OK - Continue</button></p>
+          <p class="pbtn">
+            <button class="btn">OK - Continue</button>
+          </p>
+
       </div>
     </form>
   </div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+
+  <div class="container">
+    <div class="header"></div>
+
+    <ng-template #finalTranslation>
+      <p class="finalTranslation">Your final translation is "{{translation}}"</p>
+    </ng-template>
+    <form>
+      <div *ngIf="displayElement; else finalTranslation">
+        <div class="bluebox">
+          <input (keyup)="inputDelay()" [(ngModel)]="text" name="text" type="text" />
+        </div>
+
+        <div class="translation">Translated text: {{translation}}</div>
+
+        <p class="pbtn"><button (click)="continue()" class="btn">OK - Continue</button></p>
+      </div>
+    </form>
+  </div>
+  
+
+</body>
+</html>

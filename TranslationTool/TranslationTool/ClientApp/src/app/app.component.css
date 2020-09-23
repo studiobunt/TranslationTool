@@ -1,0 +1,86 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header{
+    background-color:rgb(199, 0, 0);
+    height: 200px;
+}
+
+.container {
+  background-color: white;
+  border-style: solid;
+  border-color: rgb(199, 0, 0);
+  padding: 0;
+}
+
+.bluebox{
+  height: 200px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1%;
+  background-color: rgb(220, 233, 247);
+  border: 2px solid  rgb(100, 180, 255);
+}
+
+.translation {
+  position: relative;
+  left: 10%;
+  margin-top: 5%;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.finalTranslation{
+    padding-top: 5%;
+    padding-bottom: 30%;
+    padding-left: 2%;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input[type=text] {
+  width: 80%;
+  padding: 10px;
+  margin: 25px 0 22px 0;
+  border: 1px solid rgb(100, 180, 255);
+  background: white;
+  position: relative;
+  display: block;
+  top: 60%;
+  left: 10%
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.pbtn{
+    text-align: right;
+    padding-right: 20px;
+}
+
+.btn {
+  background: linear-gradient(to bottom right, #fca000 25%, #59510c 100%);
+  background-color: #fca000;
+  border-radius: 7px;
+  border: 1px solid #18ab29;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 11px 59px;
+  text-decoration: none;
+  text-shadow: 0px 0px 0px #2f6627;
+  margin-top: 10%;
+  margin-bottom: 4%;
+}
+
